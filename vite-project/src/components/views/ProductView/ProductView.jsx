@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getProduct, getProductos } from '../../../../../asyncMock';
+import { getProduct, getProductos } from '../../../../asyncMock';
 
 export default function ProductView() {
     const [product, setProduct] = useState({});

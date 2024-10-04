@@ -4,9 +4,10 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import NavBar from "./components/NavBar"
-import HomeView from './components/views/ContactView/ContactView'
+import HomeView from './components/views/HomeView/HomeView'
 import ProductView from './components/views/ProductView/ProductView'
 import ContactView from './components/views/ContactView/ContactView'
+import ProductsList from './components/ProductsList'
 
 function App() {
   return (
@@ -15,10 +16,8 @@ function App() {
     {/* <h1>React Router Dom</h1></BrowserRouter> */}
     <NavBar />
     <Routes>
-      <Route exact path="/Menu" element={<HomeView />} />
-      <Route exact path="/Productos" element={<ProductView />} />
-      <Route exact path="/Contacto" element={<ContactView />} />
-      <Route exact path="/producto/:id" element={<ProductView />} />
+      <Route exact path="/Menu" element={<ProductsList />} />
+      <Route exact path="/Productos/:category" element={<ProductsList />} />
     </Routes>
     </BrowserRouter>
     </>

@@ -13,7 +13,9 @@ export default function NavBar() {
         >
                 <Link to={'/Menu'}>Menu</Link>
                 <button>
-                    <Link to={'/Productos'}>hola</Link>
+                    <Link to={'/Productos/Remeras'}>Remeras</Link>
+                    <Link to={'/Productos/Pantalones'}>Pantalones</Link>
+                    <Link to={'/Productos/Zapatillas'}>Zapatillas</Link>
                     </button>
                     <button>
                         <p>hola</p>

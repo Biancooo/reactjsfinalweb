@@ -1,13 +1,21 @@
 import { useEffect, useState } from 'react';
-import { getProducts } from '../../../asyncMock';
+import { getProducts, getCategory } from '../../asyncMock';
 import ProductCard from './ProductCard';
+import { useParams } from 'react-router-dom';
 
 export default function ProductsList() {
     const [products, setProducts] = useState([]);
-
+    const {category} = useParams();
     useEffect(() => {
-        getProducts.then((data) => setProducts(data));
-    }, []);
+        console.log("categoria: ",category)
+        if(category){
+            const productosFiltrados = getCategory(category)
+            console.log("test",productosFiltrados)
+            setProducts(productosFiltrados)
+        }
+        else{
+        getProducts.then((data) => setProducts(data));}
+    }, [category]);
 
     return (
         <>

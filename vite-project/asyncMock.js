@@ -3,7 +3,7 @@ const products = [
         id: 1,
         title: 'Remera',
         price: '1000',
-        category: 'deportes',
+        category: 'Remeras',
         description: 'talles: XL, L, M, S y XS',
         image:
         'https://lafabricaderemeras.com.ar/wp-content/uploads/2023/02/2-REMERAS-DEPORTIVAS-150x150.jpg',
@@ -12,19 +12,19 @@ const products = [
         id: 2,
         title: 'Pantalón',
         price: '2000',
-        category: 'deportes',
+        category: 'Pantalones',
         description: 'talles: XL, L, M, S y XS',
         image:
-        'https://www.sportscar.com/blog/wp-content/uploads/2022/05/sports-car-pantalones-deportivos-150x150.jpg',
+        'https://images.vexels.com/media/users/3/182538/isolated/lists/97e829ed9ae850ed48710c04f6bd6f13-gatito-lindo-gato.png',
     },
     {
         id: 3,
         title: 'Zapato',
         price: '3000',
-        category: 'deportes',
+        category: 'Zapatillas',
         description: 'talles: XL, L, M, S y XS',
         image:
-        'https://www.sportscar.com/blog/wp-content/uploads/2022/05/sports-car-zapatos-deportivos-150x150.jpg',
+        'https://images.vexels.com/media/users/3/182538/isolated/lists/97e829ed9ae850ed48710c04f6bd6f13-gatito-lindo-gato.png',
     },
 ];
 
