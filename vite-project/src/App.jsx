@@ -8,6 +8,7 @@ import HomeView from './components/views/HomeView/HomeView'
 import ProductView from './components/views/ProductView/ProductView'
 import ContactView from './components/views/ContactView/ContactView'
 import ProductsList from './components/ProductsList'
+import ItemDetail from './components/ItemDetail'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
     <Routes>
       <Route exact path="/Menu" element={<ProductsList />} />
       <Route exact path="/Productos/:category" element={<ProductsList />} />
+      <Route exact path="/Item/:id" element={<ItemDetail />} />
     </Routes>
     </BrowserRouter>
     </>

@@ -7,10 +7,10 @@ export default function HomeView(){
 
     useEffect(()=>{
 
-          const productos = getProductos();
-          console.log("testeo",productos)
-          setProducts(productos);
-      },[]);
+        const productos = getProductos();
+        console.log("testeo",productos)
+        setProducts(productos);
+    },[]);
     
     return (<>
     {products.map(producto=> <p>`${producto.title}`</p>)}
