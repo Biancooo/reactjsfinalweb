@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { getProducts, getCategory } from '../../asyncMock';
+import { useEffect, useState, } from 'react';
+import { getProducts, getCategory } from '../components/firebase/firebase.js';
 import ProductCard from './ProductCard';
 import { useParams } from 'react-router-dom';
 
@@ -9,13 +9,25 @@ export default function ProductsList() {
     useEffect(() => {
         console.log("categoria: ",category)
         if(category){
-            const productosFiltrados = getCategory(category)
-            console.log("test",productosFiltrados)
-            setProducts(productosFiltrados)
+            console.log("entreIf")
+            const fetchDeCategoria = async()=>{
+                const productosFiltrados = await getCategory(category)
+                console.log("productosFiltrados",productosFiltrados)
+                console.log("test",productosFiltrados)
+                setProducts(productosFiltrados)
+            }
+            fetchDeCategoria()
         }
         else{
-        getProducts.then((data) => setProducts(data));}
-    }, [category]);
+            console.log("entre else")
+            const fetchDeProductos = async() =>{
+            const productos = await getProducts()
+            console.log(productos,"productos")
+            setProducts(productos);
+            }
+            fetchDeProductos()
+        }}
+        , [category]);
 
     return (
         <>
@@ -26,4 +38,4 @@ export default function ProductsList() {
     </section>
     </>
     );
-}
+} 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getProductos } from "../../../../asyncMock";
+import { getProducts } from "../../firebase/firebase";
 
 export default function HomeView(){
 
@@ -7,7 +7,7 @@ export default function HomeView(){
 
     useEffect(()=>{
 
-        const productos = getProductos();
+        const productos = getProducts();
         console.log("testeo",productos)
         setProducts(productos);
     },[]);
@@ -15,4 +15,4 @@ export default function HomeView(){
     return (<>
     {products.map(producto=> <p>`${producto.title}`</p>)}
     </>)
-}
+} 

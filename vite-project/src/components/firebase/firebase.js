@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
+import { getDocs, collection, getFirestore,query, where} from "firebase/firestore"
+// TODO: Add SDKs for Firebases products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
@@ -19,6 +20,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const db = getFirestore(app)
 
 //obtener un producto
 export async function getSingleProduct(id) {
@@ -39,8 +41,9 @@ export async function getSingleProduct(id) {
 //obtener toda una coleccion
 export async function getProducts() {
     try {
-        const querySnapshot = await getDocs(collection(db, 'products'));
+        const querySnapshot = await getDocs(collection(db, "products"));
         if (querySnapshot.size !== 0) {
+            console.log("estoy bien linkeado a firebase y deuelvo un array.", querySnapshot)
             const productsList = querySnapshot.docs.map(docu => {
                 return {
                     id: docu.id,
@@ -55,6 +58,7 @@ export async function getProducts() {
         console.error('Error al obtener el documento: ', error);
     }
 }
+
 
 //filtros de precio
 export async function filterProductsByPrice(price) {
@@ -77,5 +81,48 @@ export async function filterProductsByPrice(price) {
         }
     } catch (error) {
         console.log('Error al obtener el documento: ', error);
+    }
+}
+
+export async function getCategory(category) {
+    try {
+        const filteredQuery = query(collection (db, 'products'),
+        where('category', '==', category),
+    );
+    const QuerySnapshot = await getDocs(filteredQuery);
+    if (QuerySnapshot.size !== 0) {
+        const ProductsList = QuerySnapshot.docs.map((docu) => {
+            return {
+                id: docu.id,
+                ...docu.data(),
+            };
+            });
+            return ProductsList;
+        } else {
+            console.log('No se encontro una categoria!');
+        }
+        } catch (error) {
+        console.log('Error al conseguir una categoria: ', error);
+        }
+    };
+
+export async function getFilterById(id) {
+    try {
+        const filteredQuery = query(collection (db, 'products'),
+    where('id', '==', id),
+        );
+        const QuerySnapshot = await getFilterById(id);
+        if (QuerySnapshot.size !== 0) {
+            const ProductsList = QuerySnapshot.docs.map((docu) => {
+                return {
+                    id: docu.id,
+                ...docu.data(),
+                };
+            });
+            return ProductsList;
+        }
+    }
+    catch (error) {
+        console.log('Error al conseguir un producto por id: ', error);
     }
 }
