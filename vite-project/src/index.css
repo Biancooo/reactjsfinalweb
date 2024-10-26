@@ -2,11 +2,14 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+  flex: auto;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
+  background-color: #63b4ff;
+  background-image: url("../img/otras/fondo.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -15,11 +18,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #bed8ff;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #64a2ff;
 }
 
 body {
@@ -28,6 +31,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-image: url(../img/fondo.jpeg)
 }
 
 h1 {
@@ -36,18 +40,20 @@ h1 {
 }
 
 button {
+  position:middle;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #607dff;
+  outline: auto;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #4a53ff;
 }
 button:focus,
 button:focus-visible {
@@ -56,13 +62,13 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+    color: #77c2ff;
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #000000;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #7b93ff;
   }
 }

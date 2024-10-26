@@ -5,22 +5,21 @@ export default function NavBar() {
         <>
         <nav
         style={{
-            display: 'flex',
+            display: 'wrap',
             gap: 10,
-            justifyContent: 'center',
+            justifyContent: 'auto',
             marginBottom: 30,
         }}
         >
-                <Link to={'/Menu'}>Menu</Link>
                 <button>
-                    <Link to={'/Productos/Remeras'}>Remeras</Link>
-                    <Link to={'/Productos/Pantalones'}>Pantalones</Link>
+                <Link to={'/Menu'}>Menu</Link>
+                </button>
+                <button>
+                    <Link to={'/Productos/Pantalones'}>Pantalones</Link> <gap></gap>
+                    <Link to={'/Productos/Remeras'}>Remeras</Link> <gap></gap>
                     <Link to={'/Productos/Zapatillas'}>Zapatillas</Link>
-                    </button>
-                    <button>
-                        <p>hola</p>
                         </button>
                         </nav>
                         </>
     );
-}
+} 
